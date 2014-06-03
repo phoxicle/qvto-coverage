@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: QVTo Code Coverage
+Bundle-SymbolicName: de.phei.qvto.coverage;singleton:=true
+Bundle-Version: 1.0.4
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: de.phei.qvto.coverage
+Bundle-Activator: de.phei.qvto.coverage.CoveragePlugin
+Require-Bundle: org.eclipse.jface,
+ org.eclipse.ui.workbench,
+ org.eclipse.debug.core,
+ org.eclipse.jdt.junit,
+ org.eclipse.jdt.junit.core,
+ org.eclipse.jdt.launching,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.ide,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.3.1",
+ org.eclipse.m2m.qvt.oml.common;bundle-version="3.3.0",
+ de.phei.qvto.coverage.common,
+ de.phei.qvto.logging,
+ org.eclipse.jdt.core,
+ org.eclipse.ocl
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/guava-17.0.jar,
+ .

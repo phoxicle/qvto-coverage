@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension
+      point = "org.eclipse.ui.preferencePages">
+      <page
+         id="de.phei.qvto.coverage.preferences"
+         class="de.phei.qvto.coverage.QVTOCoveragePreferencePage"
+         name="QVTo Code Coverage"
+         >
+      </page>
+   </extension>
+
+<extension point="org.eclipse.debug.core.launchDelegates">
+  <launchDelegate
+	   id="de.phei.qvto.coverageLaunchDelegate"
+	   name="QVTo Test Coverage"
+	   delegate="de.phei.qvto.coverage.launching.CoverageLaunchDelegate"
+	   type="org.eclipse.jdt.junit.launchconfig"
+	   modes="run, debug">
+  </launchDelegate>
+ </extension>
+ 
+ <extension point="org.eclipse.ui.views">
+        <view id="de.phei.qvto.coverage.ui.coverageView"
+             name="QVTo Test Coverage View"
+          class="de.phei.qvto.coverage.ui.CoverageView"
+          />
+</extension>
+
+
+ 
+ 
+	
+<extension
+    id="de.phei.qvto.coverage.markers.touchedMarker"
+    name="QVTo coverage touched marker"
+    point="org.eclipse.core.resources.markers">
+  <super
+    type="org.eclipse.core.resources.textmarker">
+  </super>
+</extension>
+
+<extension
+      point="org.eclipse.ui.editors.annotationTypes">
+   <type
+         markerType="de.phei.qvto.coverage.markers.touchedMarker"
+         name="de.phei.qvto.coverage.markers.touchedMarker">
+   </type>
+</extension>
+
+<extension
+      point="org.eclipse.ui.editors.markerAnnotationSpecification">
+   <specification
+         annotationType="de.phei.qvto.coverage.markers.touchedMarker"
+         colorPreferenceKey="de.phei.qvto.coverage.markers.touched.color"
+         colorPreferenceValue="152,251,152"
+         contributesToHeader="false"
+         highlightPreferenceKey="de.phei.qvto.coverage.markers.touched.highlight"
+         highlightPreferenceValue="true"
+         includeOnPreferencePage="true"
+         label="QVTO coverage touched Marker"
+         overviewRulerPreferenceKey="de.phei.qvto.coverage.markers.touched.overview"
+         overviewRulerPreferenceValue="true"
+         presentationLayer="0"
+         textPreferenceKey="de.phei.qvto.coverage.markers.touched.text"
+         textPreferenceValue="true"
+         textStylePreferenceValue="BOX"
+         verticalRulerPreferenceKey="de.phei.qvto.coverage.markers.touched.ruler"
+         verticalRulerPreferenceValue="true">
+   </specification>
+</extension>
+
+<extension
+    id="de.phei.qvto.coverage.markers.untouchedMarker"
+    name="QVTo coverage untouched Marker"
+    point="org.eclipse.core.resources.markers">
+  <super
+    type="org.eclipse.core.resources.textmarker">
+  </super>
+</extension>
+
+<extension
+      point="org.eclipse.ui.editors.annotationTypes">
+   <type
+         markerType="de.phei.qvto.coverage.markers.untouchedMarker"
+         name="de.phei.qvto.coverage.markers.untouchedMarker">
+   </type>
+</extension>
+
+<extension
+      point="org.eclipse.ui.editors.markerAnnotationSpecification">
+   <specification
+         annotationType="de.phei.qvto.coverage.markers.untouchedMarker"
+         colorPreferenceKey="de.phei.qvto.coverage.markers.untouched.color"
+         colorPreferenceValue="255,192,203"
+         contributesToHeader="false"
+         highlightPreferenceKey="de.phei.qvto.coverage.markers.untouched.highlight"
+         highlightPreferenceValue="true"
+         includeOnPreferencePage="true"
+         label="QVTo coverage untouched Marker"
+         overviewRulerPreferenceKey="de.phei.qvto.coverage.markers.untouched.overview"
+         overviewRulerPreferenceValue="true"
+         presentationLayer="0"
+         textPreferenceKey="de.phei.qvto.coverage.markers.untouched.text"
+         textPreferenceValue="true"
+         textStylePreferenceValue="BOX"
+         verticalRulerPreferenceKey="de.phei.qvto.coverage.markers.untouched.ruler"
+         verticalRulerPreferenceValue="true">
+   </specification>
+</extension>
+ 
+
+</plugin>

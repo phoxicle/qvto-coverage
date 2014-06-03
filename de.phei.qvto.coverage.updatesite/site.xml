@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.phei.qvto.patch_3.3.102.201405211230.jar" id="de.phei.qvto.patch" version="3.3.102.201405211230" patch="true">
+      <category name="de.phei.qvto.coverage.category"/>
+   </feature>
+   <feature url="features/de.phei.qvto.coverage.feature_1.0.4.jar" id="de.phei.qvto.coverage.feature" version="1.0.4">
+      <category name="de.phei.qvto.coverage.category"/>
+   </feature>
+   <category-def name="de.phei.qvto.coverage.category" label="QVTo Coverage"/>
+</site>

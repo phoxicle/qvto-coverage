@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: QVTo Coverage Common
+Bundle-SymbolicName: de.phei.qvto.coverage.common
+Bundle-Version: 1.0.3
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: de.phei.qvto.coverage.common
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: de.phei.qvto.coverage.common.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui.workbench,
+ org.eclipse.emf.common;bundle-version="2.9.0",
+ org.eclipse.m2m.qvt.oml;bundle-version="3.3.1"
