@@ -16,7 +16,7 @@ public class Shell {
 	
 	public static void main(String[] args) {
 		
-		List<Class<? extends QvtGenericVisitorDecorator>> visitorDecorators = QVTEvaluationOptions.VISITOR_DECORATORS.defaultValue();
+		List<Class<? extends QvtGenericVisitorDecorator>> visitorDecorators = new ArrayList<Class<? extends QvtGenericVisitorDecorator>>();
 		visitorDecorators.add(QVTOCoverageDecorator.class);
 		
 		SimpleEntry<List<Class<? extends QvtGenericVisitorDecorator>>> decoratorsEntry = 

@@ -38,7 +38,6 @@ public class CoverageModel {
 			// If we've already seen this transformation, add to that model rather than create a new one
 			
 			URI uri = transformationData.getURI();
-			
 			if (uriToTransModels.containsKey(uri)) {
 				transformationModel = uriToTransModels.get(uri); 
 			} else {

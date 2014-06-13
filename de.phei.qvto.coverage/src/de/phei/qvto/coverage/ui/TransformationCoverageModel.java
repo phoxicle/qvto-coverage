@@ -9,6 +9,7 @@ import java.util.Set;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.m2m.internal.qvt.oml.InternalTransformationExecutor;
 import org.eclipse.m2m.internal.qvt.oml.compiler.CompiledUnit;
@@ -165,13 +166,14 @@ public class TransformationCoverageModel {
 		if (module == null) {
 			// Check for transformation first
 			InternalTransformationExecutor executor = new InternalTransformationExecutor(getURI());
-			executor.loadTransformation();
+			executor.loadTransformation(new NullProgressMonitor());
 			module = executor.getTransformation();
 			
 			// Otherwise find library
 			if (module == null ) {
-			
+				
 				CompiledUnit unit = executor.getUnit();
+			
 				if (unit != null) {
 					for (Module m : unit.getModules()) {
 						//TODO: definitely should choose correct one, according to URI

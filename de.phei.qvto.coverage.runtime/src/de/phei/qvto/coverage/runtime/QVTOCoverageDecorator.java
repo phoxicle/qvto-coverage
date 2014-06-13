@@ -1,17 +1,16 @@
 package de.phei.qvto.coverage.runtime;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.m2m.internal.qvt.oml.ast.binding.ASTBindingHelper;
+import org.eclipse.m2m.internal.qvt.oml.ast.binding.IModuleSourceInfo;
 import org.eclipse.m2m.internal.qvt.oml.ast.env.InternalEvaluationEnv;
 import org.eclipse.m2m.internal.qvt.oml.ast.env.QvtOperationalEvaluationEnv;
-import org.eclipse.m2m.internal.qvt.oml.compiler.ExeXMISerializer;
 import org.eclipse.m2m.internal.qvt.oml.evaluator.InternalEvaluator;
 import org.eclipse.m2m.internal.qvt.oml.evaluator.QvtGenericVisitorDecorator;
 import org.eclipse.m2m.internal.qvt.oml.evaluator.QvtRuntimeException;
 import org.eclipse.m2m.internal.qvt.oml.expressions.Module;
 import org.eclipse.m2m.internal.qvt.oml.expressions.OperationalTransformation;
-import org.eclipse.ocl.ecore.impl.PropertyCallExpImpl;
 import org.eclipse.ocl.utilities.ASTNode;
-
 
 import de.phei.qvto.coverage.common.CoverageData;
 import de.phei.qvto.coverage.common.TransformationCoverageData;
@@ -28,6 +27,8 @@ public class QVTOCoverageDecorator extends QvtGenericVisitorDecorator {
 	@Override
 	protected Object genericPreVisitAST(ASTNode element) {
 		getTransformationCoverageData().touch(element);
+//		System.out.println("element " + element.eResource().getURI());
+		
 		return super.genericPreVisitAST(element);
 	}
 	
@@ -48,17 +49,16 @@ public class QVTOCoverageDecorator extends QvtGenericVisitorDecorator {
 		
 		TransformationCoverageData transformationData = null;
 		
+		
 		if(internEnv.getCurrentModule() != null) {
 			Module module = internEnv.getCurrentModule().getModule();
 			
-			URI compiledUri = module.eResource().getURI(); // .qvtox
-			URI uri = ExeXMISerializer.toSourceUnitURI(compiledUri); // .qvto
-			
-			
+			IModuleSourceInfo moduleSource = ASTBindingHelper.getModuleSourceBinding(module);
+			URI uri = moduleSource.getSourceURI().appendFragment(module.getName());
 			
 			// See if we already have a data for that module.
 			for (TransformationCoverageData transData : CoverageData.getInstance().getTransformationDatas()) {
-				if (transData.getURI() == uri) {
+				if (transData.getURI().equals(uri)) {
 					transformationData = transData;
 				}
 			}
