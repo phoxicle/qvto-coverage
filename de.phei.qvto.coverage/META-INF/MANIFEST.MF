@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Coverage
 Bundle-SymbolicName: de.phei.qvto.coverage;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.7.qualifier
 Bundle-ClassPath: lib/guava-17.0.jar,
  .
 Bundle-Activator: de.phei.qvto.coverage.CoveragePlugin

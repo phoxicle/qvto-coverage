@@ -2,7 +2,7 @@
 <feature
       id="de.phei.qvto.coverage.feature"
       label="Feature"
-      version="1.0.1.qualifier">
+      version="1.0.7.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]

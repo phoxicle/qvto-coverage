@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Runtime
 Bundle-SymbolicName: de.phei.qvto.coverage.runtime;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.7.qualifier
 Bundle-Activator: de.phei.qvto.coverage.runtime.Activator
 Export-Package: de.phei.qvto.coverage.runtime
 Require-Bundle: org.eclipse.core.runtime,

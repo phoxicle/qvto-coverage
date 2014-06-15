@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/de.phei.qvto.coverage.feature_1.0.1.201406131750.jar" id="de.phei.qvto.coverage.feature" version="1.0.1.201406131750">
+   <feature url="features/de.phei.qvto.coverage.feature_1.0.7.201406152246.jar" id="de.phei.qvto.coverage.feature" version="1.0.7.201406152246">
       <category name="de.phei.qvto.coverage.category"/>
    </feature>
    <category-def name="de.phei.qvto.coverage.category" label="QVTo Coverage"/>
